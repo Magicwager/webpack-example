@@ -1,0 +1,30 @@
+{
+  "name": "webpack-example",
+  "version": "1.0.0",
+  "description": "This is an example of webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Magicwager/webpack-example.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "wujiank",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Magicwager/webpack-example/issues"
+  },
+  "homepage": "https://github.com/Magicwager/webpack-example#readme",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.6.1",
+    "webpack": "^3.4.1"
+  }
+}
