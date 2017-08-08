@@ -65,20 +65,35 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var content=__webpack_require__(1);
-document.getElementById("app").appendChild(content());
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__content_js__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__content_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__content_js__);
+// var content=require('./content.js');
+//es6写法
+document.getElementById("app").appendChild(__WEBPACK_IMPORTED_MODULE_0__content_js___default()());
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
+var json=__webpack_require__(2)
 module.exports=function(){
-  var greet = document.createElement('div');
+  let greet = document.createElement('div');
   greet.textContent = "Hello!I'm a example of webpack!";
+  var json_greet=document.createElement("div");
+  greet.appendChild(json_greet);
+  json_greet.textContent=json.content
   return greet;
 }
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = {"content":"This content is from json"}
 
 /***/ })
 /******/ ]);
