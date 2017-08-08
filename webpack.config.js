@@ -1,5 +1,5 @@
 module.exports={
-	devtool:'eval-source-map',//便于开发环境找错误位置，eval-source-map只用于开发环境
+	// devtool:'eval-source-map',//便于开发环境找错误位置，eval-source-map只用于开发环境
 	entry:__dirname+"/app/index.js",//唯一的入口文件
 	output:{
 		path:__dirname+"/public",//产出文件所在的位置
