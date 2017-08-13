@@ -15,15 +15,19 @@ module.exports={
 		 {
 		 	test:/\.js$/,
 		 	exclude:/node_modules/,
-		 	loader:'babel-loader'
+		 	use:'babel-loader'
 		 },
 		 {
 		 	test:/\.css$/,
-		 	loader:'style!css'
+		 	use:['style-loader','css-loader']
 		 },
 		 {
 		 	test:/\.json$/,
-		 	loader:'json-loader'
+		 	use:'json-loader'//新版本webpack要求配置文件中不能省略‘-loader’
+		 },
+		 {
+		 	test:/\.less$/,
+		 	use:['style-loader','css-loader','less-loader']
 		 }
 
 		]
