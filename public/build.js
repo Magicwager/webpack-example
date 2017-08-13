@@ -60,97 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _content = __webpack_require__(1);
-
-var _content2 = _interopRequireDefault(_content);
-
-__webpack_require__(3);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// var content=require('./content.js');
-document.getElementById("app").appendChild((0, _content2.default)()); //es6写法
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var json = __webpack_require__(2);
-module.exports = function () {
-  var greet = document.createElement('div');
-  greet.textContent = "Hello!I'm a example of webpack!";
-  var json_greet = document.createElement("div");
-  greet.appendChild(json_greet);
-  json_greet.textContent = json.content;
-  return greet;
-};
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-module.exports = {"content":"This content is from json"}
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(4);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(6)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/less-loader/dist/cjs.js!./index.less", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/less-loader/dist/cjs.js!./index.less");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(5)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "#app {\n  color: #666;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports) {
 
 /*
@@ -232,7 +146,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 6 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -591,6 +505,118 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _content = __webpack_require__(3);
+
+var _content2 = _interopRequireDefault(_content);
+
+__webpack_require__(10);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// var content=require('./content.js');
+document.getElementById("app").appendChild((0, _content2.default)()); //es6写法
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _content = __webpack_require__(4);
+
+var _content2 = _interopRequireDefault(_content);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var json = __webpack_require__(9);
+
+
+module.exports = function () {
+  var greet = document.createElement('div');
+  greet.textContent = "Hello!I'm a example of webpack!";
+  var json_greet = document.createElement("div");
+  greet.appendChild(json_greet);
+  json_greet.textContent = json.content; //使用json loader
+  debugger;
+  var html_greet = document.createElement("div");
+  html_greet.innerHTML = (0, _content2.default)();
+  greet.appendChild(html_greet);
+  return greet;
+};
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(5);
+
+var _content = __webpack_require__(8);
+
+var _content2 = _interopRequireDefault(_content);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function () {
+  var content2 = _content2.default;
+  return content2;
+};
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(6);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/less-loader/dist/cjs.js!./content2.less", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/less-loader/dist/cjs.js!./content2.less");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".tips {\n  color: red;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 7 */
 /***/ (function(module, exports) {
 
@@ -683,6 +709,63 @@ module.exports = function (css) {
 	// send back the fixed css
 	return fixedCss;
 };
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"tips\">Hello!I'm a example of webpack,text is from html</div>";
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+module.exports = {"content":"This content is from json"}
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(11);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/less-loader/dist/cjs.js!./index.less", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/less-loader/dist/cjs.js!./index.less");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "#app {\n  color: #666;\n}\n", ""]);
+
+// exports
 
 
 /***/ })
