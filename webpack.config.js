@@ -13,7 +13,7 @@ module.exports={
 	module:{
 		rules:[
 		 {
-		 	test:/\.js$/,
+		 	test:/(\.js|\.jsx)$/,
 		 	exclude:/node_modules/,
 		 	use:'babel-loader'
 		 },
@@ -27,7 +27,7 @@ module.exports={
 		 },
 		 {
 		 	test:/\.less$/,
-		 	use:['style-loader','css-loader','less-loader']
+		 	use:['style-loader','css-loader','less-loader','postcss-loader']
 		 },
 		 {
 		 	test:/\.html$/,
@@ -36,6 +36,9 @@ module.exports={
 
 		]
 
+	},
+	plugins:{
+		
 	}
 }
 /*__dirname”是node.js中的一个全局变量，它指向当前执行脚本所在的目录。*/
