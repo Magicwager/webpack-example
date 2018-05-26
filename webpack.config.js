@@ -7,12 +7,12 @@ module.exports={
 		path:__dirname+"/public",//产出文件所在的位置
 		filename:"build.js"//产出文件的文件名
 	},
-	devServer:{
+/* 	devServer:{
 		contentBase:'./public',//本地服务器所加载的页面所在的目录, 
 		port:8888,
 		inline:true,//实时刷新，
 		hot:true
-	},
+	}, */
 	module:{
 		rules:[
 		 {
